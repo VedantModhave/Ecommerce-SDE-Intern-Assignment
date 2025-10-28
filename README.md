@@ -93,8 +93,3 @@ A modern, responsive e-commerce web application built with React, featuring prod
 - **Redux DevTools**: Time-travel debugging
 - **Component Structure**: Clear separation of concerns
 - **API Documentation**: Well-documented utility functions
-
----
-=======
-# Ecommerce-SDE-Intern-Assignment
->>>>>>> 41da0c45d1f3624abdc34e5c5efdd8e315cdccf0
