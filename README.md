@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # React E-Commerce Web App
 
 A modern, responsive e-commerce web application built with React, featuring product browsing, shopping cart functionality, and checkout process. The app integrates with the Fake Store API to provide a realistic shopping experience.
