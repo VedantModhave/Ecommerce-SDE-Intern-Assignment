@@ -32,29 +32,55 @@ import Checkout from './pages/Checkout';
  */
 const theme = createTheme({
   palette: {
+    // Nua-inspired soft, feminine palette
     primary: {
-      main: '#1976d2', // Primary blue color
+      main: '#7A5AF8', // soft violet
+      light: '#BFA8FF',
+      dark: '#5B3FC4',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#dc004e', // Secondary red color
+      main: '#FF7CA8', // rosy pink accent
+      light: '#FFB3C9',
+      dark: '#D75B86',
+      contrastText: '#231F20',
     },
     background: {
-      default: '#f5f5f5', // Light gray background
+      default: '#FFF7FB', // very light pink/neutral background
+      paper: '#FFFFFF',
     },
+    text: {
+      primary: '#2B1B2D', // deep plum for headings/body
+      secondary: '#5D5562',
+    },
+    divider: '#EFD9E6',
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h4: {
-      fontWeight: 600, // Semi-bold headings
+    fontFamily: '"Poppins", "Inter", "Helvetica", "Arial", sans-serif',
+    h4: { fontWeight: 700 },
+    h5: { fontWeight: 700 },
+    h6: { fontWeight: 600 },
+    button: { textTransform: 'none', fontWeight: 600 },
+  },
+  spacing: 8,
+  shape: { borderRadius: 10 },
+  components: {
+    MuiAppBar: {
+      defaultProps: { color: 'default' },
+      styleOverrides: {
+        root: {
+          backgroundColor: '#FFFFFF',
+          color: '#2B1B2D',
+          borderBottom: '1px solid #EFD9E6',
+        },
+      },
     },
-    h5: {
-      fontWeight: 600,
-    },
-    h6: {
-      fontWeight: 600,
+    MuiButton: {
+      styleOverrides: {
+        root: { borderRadius: 10 },
+      },
     },
   },
-  spacing: 8, // 8px base spacing unit
 });
 
 /**

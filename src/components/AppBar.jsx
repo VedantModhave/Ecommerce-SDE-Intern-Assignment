@@ -28,7 +28,7 @@ const AppBar = () => {
   };
 
   return (
-    <MuiAppBar position="sticky" elevation={2}>
+    <MuiAppBar position="sticky" color="default" elevation={2} sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
       <Toolbar sx={{ gap: 1 }}>
         <Typography
           variant={isSmall ? 'h6' : 'h6'}
