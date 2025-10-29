@@ -6,7 +6,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
   Grid,
   IconButton,
   Divider,
@@ -25,6 +24,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../hooks/useRedux';
 import { useSnackbar } from 'notistack';
 import { formatINR } from '../utils/format';
+import OptimizedImage from '../components/OptimizedImage';
 
 const ShoppingCart = () => {
   const navigate = useNavigate();
@@ -135,17 +135,25 @@ const ShoppingCart = () => {
                 <Grid container spacing={{ xs: 1, md: 1.5 }} alignItems="center">
                   {/* Product Image */}
                   <Grid item xs={12} sm={2} md={2} lg={2}>
-                    <CardMedia
-                      component="img"
-                      height="100"
-                      image={item.image}
-                      alt={item.title}
+                    <Box
                       sx={{
-                        objectFit: 'contain',
-                        backgroundColor: '#f5f5f5',
                         borderRadius: 1,
+                        overflow: 'hidden',
+                        width: '100%',
+                        height: 100,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                       }}
-                    />
+                    >
+                      <OptimizedImage
+                        src={item.image}
+                        alt={item.title}
+                        height={100}
+                        objectFit="contain"
+                        backgroundColor="#f5f5f5"
+                      />
+                    </Box>
                   </Grid>
 
                   {/* Product Details */}

@@ -3,7 +3,6 @@ import {
   Container,
   Grid,
   Card,
-  CardMedia,
   CardContent,
   Typography,
   Button,
@@ -23,6 +22,7 @@ import { useCart } from '../hooks/useRedux';
 import { useSnackbar } from 'notistack';
 import { formatINR } from '../utils/format';
 import { fetchProductById } from '../utils/api';
+import OptimizedImage from '../components/OptimizedImage';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -217,17 +217,23 @@ const ProductDetail = () => {
         {/* Product Image */}
         <Grid item xs={12} sm={5} md={5} lg={5} xl={5}>
             <Card sx={{ height: 'fit-content' }}>
-            <CardMedia
-              component="img"
-                height={{ xs: 320, md: 500 }}
-              image={product.image}
-              alt={product.title}
-              sx={{
-                objectFit: 'contain',
-                backgroundColor: '#f5f5f5',
+              <Box
+                sx={{
                   p: { xs: 1.5, md: 2 },
-              }}
-            />
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <OptimizedImage
+                  src={product.image}
+                  alt={product.title}
+                  height={{ xs: 320, md: 500 }}
+                  objectFit="contain"
+                  backgroundColor="#f5f5f5"
+                  priority={true}
+                />
+              </Box>
           </Card>
         </Grid>
 

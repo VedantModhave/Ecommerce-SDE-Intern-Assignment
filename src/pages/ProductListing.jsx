@@ -3,7 +3,6 @@ import {
   Container,
   Grid,
   Card,
-  CardMedia,
   CardContent,
   CardActions,
   Typography,
@@ -26,6 +25,7 @@ import { useSnackbar } from 'notistack';
 import { formatINR, calculatePricing } from '../utils/format';
 import { fetchProductsAsync, fetchCategoriesAsync } from '../redux/slices/productsSlice';
 import { useDispatch } from 'react-redux';
+import OptimizedImage from '../components/OptimizedImage';
 
 const ProductListing = () => {
   const navigate = useNavigate();
@@ -222,19 +222,24 @@ const ProductListing = () => {
                 }}
                 onClick={() => handleProductClick(product.id)}
               >
-                <CardMedia
-                  component="img"
-                  height={200}
-                  image={product.image}
-                  alt={product.title}
+                <Box
                   sx={{
-                    objectFit: 'contain',
-                    backgroundColor: '#f5f5f5',
                     p: { xs: 1, md: 2 },
                     height: 200,
                     width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
-                />
+                >
+                  <OptimizedImage
+                    src={product.image}
+                    alt={product.title}
+                    height={200}
+                    objectFit="contain"
+                    backgroundColor="#f5f5f5"
+                  />
+                </Box>
                 <CardContent
                   sx={{
                     flexGrow: 1,
